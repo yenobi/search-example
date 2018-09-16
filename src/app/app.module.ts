@@ -15,6 +15,7 @@ import { AboutModule } from './about/about.module';
 import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import {FfTestPageModule} from '@app/ff-test-page/ff-test-page.module';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { AppRoutingModule } from './app-routing.module';
     HomeModule,
     AboutModule,
     LoginModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FfTestPageModule
   ],
   declarations: [AppComponent],
   providers: [
