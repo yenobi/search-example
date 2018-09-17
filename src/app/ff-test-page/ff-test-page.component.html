@@ -1,3 +1,42 @@
-<p>
-  ff-test-page works!
-</p>
+
+<main class="container-fluid">
+
+  <form (ngSubmit)="submitSearch()">
+    <label>
+      Type something:
+      <input type="text" class="form-control" [(ngModel)]="search" #name="ngModel" name="search">
+    </label>
+    <button type="submit" class="btn btn-outline-primary va-baseline">search</button>
+  </form>
+
+  <section>
+    <header>
+      <h2>Chuck Norris found:</h2>
+    </header>
+
+    <div *ngIf="(!result$ && !isLoading)">
+      There is no results yet.
+    </div>
+
+
+    <div *ngIf="isLoading">
+      loading...
+    </div>
+
+    <div>
+      <div class="card m-b-20" *ngFor="let joke of result$ | async">
+        <div class="card-body">
+          <p class="card-text">{{joke.value}}</p>
+        </div>
+      </div>
+    </div>
+
+
+    <footer>
+       here will be pagnation
+    </footer>
+  </section>
+
+
+</main>
+
